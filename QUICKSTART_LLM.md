@@ -9,7 +9,7 @@
 4. Copy the API key
 
 ### Step 2: Create `.env` File
-Create a file named `.env` in the `ai_desktop_agent` folder:
+Create a file named `.env` in the project root (the `echo-desk` folder, next to `main.py`):
 
 ```bash
 GROQ_API_KEY=paste_your_api_key_here
@@ -24,6 +24,8 @@ GROQ_API_KEY=gsk_8h3...
 ```bash
 python main.py
 ```
+
+Optional conversational mode: `python main_chat.py` (see [QUICKSTART.md](QUICKSTART.md#entry-points)).
 
 ## 🧪 Test the LLM
 
@@ -58,7 +60,7 @@ WARNING - Falling back to rule-based extraction
 ```
 
 Then check:
-1. `.env` file exists in `ai_desktop_agent` folder
+1. `.env` file exists in the project root (same folder as `main.py`)
 2. API key is correct (no quotes, no spaces)
 3. File is named exactly `.env` (not `.env.txt`)
 

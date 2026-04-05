@@ -1,8 +1,13 @@
 # ARCHITECTURE DOCUMENTATION
 
+## Entry points
+
+- **`main.py`** — Primary runtime documented in this file: user input flows through `llm/interpreter.py` → policy → registry validation in `main.py` → `system/executor.py`.
+- **`main_chat.py`** — Optional alternative: uses `llm/chat_agent.py` (`ConversationalAgent`) for multi-turn chat, tool-style launches, and other features; control flow differs from the diagram below.
+
 ## System Overview
 
-The AI Desktop Agent is built on a **security-first architecture** that fundamentally separates application discovery from execution through a concept called the **Binary Boundary**.
+The AI Desktop Agent is built on a **security-first architecture** that fundamentally separates application discovery from execution through a concept called the **Binary Boundary**. The following applies to the **`main.py`** pipeline unless noted otherwise.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐

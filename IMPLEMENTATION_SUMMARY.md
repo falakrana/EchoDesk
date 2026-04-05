@@ -59,7 +59,7 @@ Executor: Launch application ✅
 1. **Get API Key**: From Groq Console
 2. **Setup**: Create `.env` file with key
 3. **Test**: Run `python llm/test_llm_interpreter.py`
-4. **Use**: Run `python main.py` or `python main_chat.py`
+4. **Use**: Run `python main.py` (primary). For conversational mode: `python main_chat.py`
 
 ---
 

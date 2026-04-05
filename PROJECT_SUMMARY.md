@@ -9,7 +9,7 @@ Successfully refactored the existing `nl_app_launcher` project into a **security
 ### 📁 New Project Structure
 
 ```
-ai_desktop_agent/
+echo-desk/
 ├── tools/
 │   ├── __init__.py
 │   └── bootstrap_scan.py      # Phase 1: Deterministic discovery
@@ -32,7 +32,8 @@ ai_desktop_agent/
 ├── ui/
 │   ├── __init__.py
 │   └── cli.py                 # User interaction layer
-├── main.py                    # Agent orchestrator
+├── main.py                    # Primary agent orchestrator
+├── main_chat.py               # Optional conversational entry point
 ├── README.md                  # Comprehensive documentation
 └── .gitignore                 # Git ignore rules
 ```
@@ -173,13 +174,14 @@ Then re-run: `python -m tools.bootstrap_scan`
 
 #### First Time Setup
 ```powershell
-cd ai_desktop_agent
+cd echo-desk
 
 # Step 1: Run bootstrap scan (Phase 1)
 python -m tools.bootstrap_scan
 
-# Step 2: Run the agent (Phase 2)
+# Step 2: Run the agent (Phase 2) — primary entry point
 python main.py
+# Optional conversational mode: python main_chat.py
 ```
 
 #### Dry Run Mode (Testing)

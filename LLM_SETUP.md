@@ -27,7 +27,7 @@ This will install:
 3. Copy your API key
 
 ### 3. Configure Environment Variables
-Create a `.env` file in the `ai_desktop_agent` directory:
+Create a `.env` file in the project root (repository folder, e.g. `echo-desk`, next to `main.py`):
 
 ```bash
 # Copy the example file
@@ -43,6 +43,8 @@ GROQ_API_KEY=your_actual_api_key_here
 ```bash
 python main.py
 ```
+
+Primary entry point is `main.py`. For conversational mode with `ConversationalAgent`, use `python main_chat.py` (see [QUICKSTART.md](QUICKSTART.md#entry-points)).
 
 ## How It Works
 
@@ -126,7 +128,7 @@ This will test various inputs and show:
 ### "GROQ_API_KEY not set"
 - Make sure you created a `.env` file
 - Verify the API key is correct
-- Check the file is in the `ai_desktop_agent` directory
+- Check the file is in the project root (same directory as `main.py`)
 
 ### "LangChain not available"
 - Run `pip install -r requirements.txt`

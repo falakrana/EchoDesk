@@ -70,7 +70,7 @@ This project implements a **"Safety by Design"** architecture that fundamentally
 ## 📁 Project Structure
 
 ```
-ai_desktop_agent/
+echo-desk/
 ├── tools/
 │   ├── __init__.py
 │   └── bootstrap_scan.py      # Phase 1: One-time discovery (NO LLM)
@@ -92,9 +92,15 @@ ai_desktop_agent/
 ├── ui/
 │   ├── __init__.py
 │   └── cli.py                 # User interaction layer
-├── main.py                    # Agent entry point
+├── main.py                    # Primary entry point (documented pipeline)
+├── main_chat.py               # Optional: conversational / multi-feature mode
 └── README.md                  # This file
 ```
+
+### Entry points
+
+- **`main.py`** — Primary runtime: interpreter → policy → registry → executor (the architecture this README describes).
+- **`main_chat.py`** — Optional: multi-turn chat, app checks, deep search, and `cmd:` flows via `ConversationalAgent` (`llm/chat_agent.py`).
 
 ## 🚀 Quick Start
 
@@ -103,7 +109,7 @@ ai_desktop_agent/
 **IMPORTANT**: This must be run FIRST to generate the application registry.
 
 ```powershell
-cd ai_desktop_agent
+cd echo-desk
 python -m tools.bootstrap_scan
 ```
 
@@ -117,6 +123,8 @@ This will:
 ```powershell
 python main.py
 ```
+
+For conversational mode instead, run `python main_chat.py` (see **Entry points** above).
 
 Or in dry-run mode (simulates execution without launching apps):
 

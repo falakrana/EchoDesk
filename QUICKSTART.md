@@ -1,5 +1,10 @@
 # Quick Start Guide
 
+## Entry points
+
+- **Primary:** `python main.py` — default agent (interpreter → policy → registry → executor).
+- **Optional:** `python main_chat.py` — conversational mode (`llm/chat_agent.py`) with extra features (chat, app checks, deep search, `cmd:`).
+
 ## Installation
 
 No installation required! The project uses only Python standard library.
@@ -15,7 +20,7 @@ No installation required! The project uses only Python standard library.
 This discovers all installed applications on your system:
 
 ```powershell
-cd ai_desktop_agent
+cd echo-desk
 python -m tools.bootstrap_scan
 ```
 

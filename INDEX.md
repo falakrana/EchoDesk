@@ -42,7 +42,7 @@ This project contains comprehensive documentation for the AI Desktop Agent - a s
 ## 🏗️ Project Structure
 
 ```
-ai_desktop_agent/
+echo-desk/
 ├── 📄 Documentation
 │   ├── INDEX.md              ← You are here
 │   ├── QUICKSTART.md         ← Start here for usage
@@ -56,7 +56,8 @@ ai_desktop_agent/
 │       └── bootstrap_scan.py  ← Discovers installed apps
 │
 ├── 🤖 Phase 2: AI Agent Runtime
-│   ├── main.py               ← Entry point & orchestrator
+│   ├── main.py               ← Primary entry point & orchestrator
+│   ├── main_chat.py          ← Optional: conversational agent
 │   │
 │   ├── llm/                  ← Natural language processing
 │   │   ├── __init__.py
@@ -96,6 +97,7 @@ ai_desktop_agent/
 |------|---------------|---------|
 | First-time setup | [QUICKSTART.md](QUICKSTART.md#first-time-setup) | `python -m tools.bootstrap_scan` |
 | Run the agent | [QUICKSTART.md](QUICKSTART.md#step-2-run-the-agent) | `python main.py` |
+| Conversational / chat mode | [QUICKSTART.md](QUICKSTART.md#entry-points) | `python main_chat.py` |
 | Test without launching apps | [QUICKSTART.md](QUICKSTART.md#testing-dry-run-mode) | `python main.py --dry-run` |
 | List available apps | [QUICKSTART.md](QUICKSTART.md#list-available-apps) | Type `list` in agent |
 | View statistics | [QUICKSTART.md](QUICKSTART.md#view-statistics) | Type `stats` in agent |
@@ -133,7 +135,7 @@ The system implements a **Binary Boundary** between two phases:
 - **Output**: `config/app_registry.json` (read-only whitelist)
 
 ### Phase 2: AI Agent (Runtime)
-- **File**: `main.py` (orchestrator)
+- **File**: `main.py` (primary orchestrator); optional `main_chat.py` for conversational mode
 - **Purpose**: Natural language application launching
 - **Security**: LLM never sees paths, executor uses `shell=False`
 - **Input**: Natural language text ONLY
@@ -188,7 +190,7 @@ Unknown or low-confidence input results in safe failure, not execution.
 
 ### Daily Usage
 ```
-1. Run: python main.py
+1. Run: python main.py (or python main_chat.py for conversational mode)
 2. Type natural language commands
 3. Type 'help' for assistance
 4. Type 'list' to see apps

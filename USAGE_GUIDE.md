@@ -29,9 +29,9 @@ You want the AI Desktop Agent to understand natural language like **"I want to u
 
 ### Step 2: Create the `.env` File (1 minute)
 
-1. **Open the folder**:
+1. **Open the repository folder** (the project root where `main.py` lives), for example:
    ```
-   c:\Users\Falak\Desktop\desktop-agent\ai_desktop_agent
+   C:\Users\Falak\Desktop\Projects2.0\EchoDesk\echo-desk
    ```
 
 2. **Create a new file** named exactly `.env` (no `.txt` extension!)
@@ -58,7 +58,7 @@ You want the AI Desktop Agent to understand natural language like **"I want to u
 Run this command to test if everything is configured correctly:
 
 ```bash
-cd c:\Users\Falak\Desktop\desktop-agent\ai_desktop_agent
+cd C:\Users\Falak\Desktop\Projects2.0\EchoDesk\echo-desk
 python llm/test_llm_interpreter.py
 ```
 
@@ -80,6 +80,8 @@ If you see `WARNING - GROQ_API_KEY not set`, check your `.env` file.
 ```bash
 python main.py
 ```
+
+This is the **primary** entry point. For conversational mode instead, run `python main_chat.py` (see [QUICKSTART.md](QUICKSTART.md#entry-points)).
 
 **You should see:**
 ```
@@ -141,14 +143,14 @@ If you see the 🤖 emoji and 💭 reasoning, the LLM is working!
 ### Problem: "GROQ_API_KEY not set"
 
 **Solution:**
-1. Check that `.env` file exists in `ai_desktop_agent` folder
+1. Check that `.env` file exists in the project root (same folder as `main.py`)
 2. Open `.env` and verify the API key is there
 3. Make sure there are no quotes around the API key
 4. Make sure the file is named exactly `.env` (not `.env.txt`)
 
 **To check:**
 ```bash
-cd c:\Users\Falak\Desktop\desktop-agent\ai_desktop_agent
+cd C:\Users\Falak\Desktop\Projects2.0\EchoDesk\echo-desk
 type .env
 ```
 
@@ -163,7 +165,7 @@ GROQ_API_KEY=abc_xyz_your_key_here
 
 **Solution:**
 ```bash
-cd c:\Users\Falak\Desktop\desktop-agent\ai_desktop_agent
+cd C:\Users\Falak\Desktop\Projects2.0\EchoDesk\echo-desk
 python -m pip install -r requirements.txt
 ```
 
@@ -206,7 +208,7 @@ Use action verbs: open, launch, start, use
 - **Quick Start**: [QUICKSTART_LLM.md](QUICKSTART_LLM.md)
 - **Full Setup Guide**: [LLM_SETUP.md](LLM_SETUP.md)
 - **Implementation Details**: [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
-- **Architecture Diagram**: [ARCHITECTURE_DIAGRAM.txt](ARCHITECTURE_DIAGRAM.txt)
+- **Architecture**: [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ---
 
@@ -242,7 +244,7 @@ Use action verbs: open, launch, start, use
 
 ## 🚀 Next Steps
 
-1. ✅ Get API key from Google AI Studio
+1. ✅ Get API key from the Groq Console
 2. ✅ Create `.env` file with your API key
 3. ✅ Run test: `python llm/test_llm_interpreter.py`
 4. ✅ Run agent: `python main.py`

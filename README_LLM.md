@@ -22,7 +22,7 @@ python -m pip install -r requirements.txt
 3. Copy it
 
 ### 3. Create `.env` File
-Create a file named `.env` in the `ai_desktop_agent` folder:
+Create a file named `.env` in the project root (the `echo-desk` folder, next to `main.py`):
 ```bash
 GROQ_API_KEY=your_api_key_here
 ```
@@ -31,6 +31,8 @@ GROQ_API_KEY=your_api_key_here
 ```bash
 python main.py
 ```
+
+Optional: `python main_chat.py` for conversational mode (see [QUICKSTART.md](QUICKSTART.md#entry-points)).
 
 ## 📁 What Changed?
 
