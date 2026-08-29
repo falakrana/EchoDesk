@@ -78,7 +78,7 @@ class AppFinder:
         # Fuzzy contains match on app keys
         for key, path in self.available_apps.items():
             key_norm = self._normalize(key)
-            if requested_norm and (requested_norm in key_norm or key_norm in requested_norm):
+            if requested_norm and key_norm and (requested_norm in key_norm or key_norm in requested_norm):
                 return {
                     "found": True,
                     "requested": requested,

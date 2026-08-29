@@ -60,7 +60,7 @@ class ChatDesktopAgent:
 
         self.agent = ConversationalAgent(
             registry_path=self.registry_path,
-            llm_model='llama-3.1-8b-instant'
+            llm_model='qwen/qwen3.6-27b'
         )
         self.app_finder = AppFinder(registry_path=self.registry_path)
 

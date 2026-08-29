@@ -107,7 +107,7 @@ class NaturalLanguageInterpreter:
             llm_model: LLM model to use
         """
         self.use_llm = use_llm and LANGCHAIN_AVAILABLE
-        self.llm_model = llm_model or "llama-3.1-8b-instant"
+        self.llm_model = llm_model or "qwen/qwen3.6-27b"
         self.llm = None
         self.llm_chain = None
         

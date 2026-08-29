@@ -45,7 +45,7 @@ class ConversationalAgent:
     - Call the appropriate tool to launch apps
     """
     
-    def __init__(self, registry_path: Optional[Path] = None, llm_model: str = "llama-3.1-8b-instant"):
+    def __init__(self, registry_path: Optional[Path] = None, llm_model: str = "qwen/qwen3.6-27b"):
         """
         Initialize the conversational agent.
         
